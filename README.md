@@ -1,6 +1,26 @@
-# Title
+# Project Rogue
 
 ## Description
+
+A fantasy themed roguelike where the player must delve into dungeons to accomplish specific tasks.  There's a time limit though.  Take too long and the darkness will seep into the dungeon, making the monsters more powerful.
+
+### Dungeons
+
+* Randomly generated ruins and caves.
+* Each dungeon has a specific objective that must be completed.
+  * Defeat the Boss.
+  * Defeat the Imp.
+  * Collect the Artifacts.
+  * Retrieve the Crystal.
+  * Defeat all the [Enemy Type].
+  * Rescue the NPC.
+* After accomplishing the objective, the player must escape before the dungeon fills with darkness.
+
+### Character Creator
+
+* The player must create a character for each run.  A run ends when the character dies, at which point the player must create a new player.
+* There's a quick generate option which builds a randomized character for the player.
+* The player can customize the character's appearance (skin tone, eye color, hair style and color, race, and height), class (knight, paladin, cleric, wizard, sorcerer, bard, thief, assassin, ranger, mercenary, barbarian, or fighter), and use skill points to buy skills for them.
 
 ## Getting Started
 
@@ -16,7 +36,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. **Clone the repository:** 
 '''bash
-git clone https://github.com/3Dever96/[ProjectName].git
+git clone https://github.com/3Dever96/ProjectRogue.git
 '''
 
 2. **Open in Unity**
