@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ public class PlayerGroundState : PlayerState
     private bool canJump;
     private bool canSprint;
     private bool sprintRecover;
+    private bool canDash;
 
     public override void StartState(PlayerController player)
     {
@@ -32,6 +34,7 @@ public class PlayerGroundState : PlayerState
         canJump = false;
         sprintRecover = false;
         currentStamina = maxStamina;
+        canDash = false;
     }
 
     public override void UpdateState(PlayerController player)
@@ -96,6 +99,13 @@ public class PlayerGroundState : PlayerState
         {
             player.SetState(player.AirState);
         }
+
+        if (InputHub.Instance.Dash && canDash)
+        {
+            player.SetState(player.DashState);
+        }
+
+        canDash = !InputHub.Instance.Dash;
     }
 
     public override void ExitState(PlayerController player)

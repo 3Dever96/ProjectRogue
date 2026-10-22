@@ -368,6 +368,11 @@ MonoBehaviour:
     headOffset: {x: 0, y: 1.54, z: 0}
     groundOffset: {x: 0, y: 0.46, z: 0}
     collisionRadius: 0.48
+  <DashState>k__BackingField:
+    dashSpeed: 8
+    dashTime: 0.25
+    groundOffset: {x: 0, y: 0.46, z: 0}
+    groundCheckRadius: 0.48
 --- !u!143 &299115204
 CharacterController:
   m_ObjectHideFlags: 0
