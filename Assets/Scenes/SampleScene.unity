@@ -348,7 +348,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4524f637e9f3e478f575fd93e1f16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
+  <GroundState>k__BackingField:
+    runSpeed: 5
+    sprintSpeed: 7
+    runThreshold: 0
+    sprintThreshold: 1
+    stickForce: -5
+    jumpSpeed: 11
+    maxStamina: 100
+    staminaConsumption: 10
+    staminaRecover: 5
+    currentStamina: 0
+    groundOffset: {x: 0, y: 0.46, z: 0}
+    groundCheckRadius: 0.48
+  <AirState>k__BackingField:
+    airMoveSpeed: 5
+    doubleJumpSpeed: 11
+    gravity: -29.43
+    fallSpeed: -25
+    headOffset: {x: 0, y: 1.54, z: 0}
+    groundOffset: {x: 0, y: 0.46, z: 0}
+    collisionRadius: 0.48
 --- !u!143 &299115204
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1098,7 +1118,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: 2429427977442808257, guid: b56ddc40484accc488ed822ff4e57c73, type: 3}
-        Gain: 10
+        Gain: 1
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -1109,7 +1129,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: 2429427977442808257, guid: b56ddc40484accc488ed822ff4e57c73, type: 3}
-        Gain: 5
+        Gain: 1
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
