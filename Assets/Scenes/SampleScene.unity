@@ -355,14 +355,13 @@ MonoBehaviour:
     sprintThreshold: 1
     stickForce: -5
     jumpSpeed: 11
-    maxStamina: 100
-    staminaConsumption: 10
+    maxStamina: 15
     staminaRecover: 5
     currentStamina: 0
     groundOffset: {x: 0, y: 0.46, z: 0}
     groundCheckRadius: 0.48
   <AirState>k__BackingField:
-    airMoveSpeed: 5
+    airMoveSpeed: 8
     doubleJumpSpeed: 11
     gravity: -29.43
     fallSpeed: -25
@@ -1129,7 +1128,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: 2429427977442808257, guid: b56ddc40484accc488ed822ff4e57c73, type: 3}
-        Gain: 1
+        Gain: -1
         CancelDeltaTime: 0
       InputValue: 0
       Driver:

@@ -13,7 +13,6 @@ public class PlayerGroundState : PlayerState
     [SerializeField] private float jumpSpeed;
 
     [SerializeField] private float maxStamina;
-    [SerializeField] private float staminaConsumption;
     [SerializeField] private float staminaRecover;
 
     private float moveSpeed;
@@ -47,11 +46,18 @@ public class PlayerGroundState : PlayerState
             {
                 moveSpeed = sprintSpeed;
                 moveThreshold = sprintThreshold;
-                currentStamina = Mathf.Clamp(currentStamina - staminaConsumption * Time.deltaTime, 0f, maxStamina);
 
-                if (currentStamina <= 0f)
+                if (InputHub.Instance.Move != Vector2.zero)
                 {
-                    sprintRecover = true;
+                    currentStamina = Mathf.Clamp(currentStamina - Time.deltaTime, 0f, maxStamina);
+                    if (currentStamina <= 0f)
+                    {
+                        sprintRecover = true;
+                    }
+                }
+                else
+                {
+                    currentStamina = Mathf.Clamp(currentStamina + staminaRecover * Time.deltaTime, 0f, maxStamina);
                 }
             }
             else
