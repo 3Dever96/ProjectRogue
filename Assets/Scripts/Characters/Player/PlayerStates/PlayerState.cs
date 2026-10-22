@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Abstract foundation defining mandatory operational lifecycle stages within the custom state machine.
+/// </summary>
 [System.Serializable]
 public abstract class PlayerState
 {
