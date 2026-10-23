@@ -14,6 +14,8 @@ public class Room : MonoBehaviour
     public GameObject doorwaySouth;
     public GameObject doorwayWest;
 
+    private Renderer[] renderers;
+
     public void ConfigurePassages(bool openNorth, bool openEast, bool openSouth, bool openWest)
     {
         wallNorth.SetActive(!openNorth);
@@ -27,5 +29,15 @@ public class Room : MonoBehaviour
 
         wallWest.SetActive(!openWest);
         doorwayWest.SetActive(openWest);
+    }
+
+    public void SetDungeonBiome(int index)
+    {
+        renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer r in renderers)
+        {
+            r.material.mainTextureOffset = new Vector2(0.125f * index, 0f);
+        }
     }
 }

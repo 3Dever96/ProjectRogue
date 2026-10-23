@@ -915,6 +915,7 @@ MonoBehaviour:
   maxBranchLength: 4
   roomPrefab: {fileID: 2969384625563717196, guid: ee7ab57291bd4554ba297efca7a345ef, type: 3}
   roomSpacing: 32
+  currentBiome: 0
 --- !u!4 &1138919873
 Transform:
   m_ObjectHideFlags: 0
