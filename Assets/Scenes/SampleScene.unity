@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 299115202}
   - component: {fileID: 299115204}
   - component: {fileID: 299115203}
+  - component: {fileID: 299115205}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -398,6 +399,18 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &299115205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299115201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c707f4f3b8b0d5b40b96f79c71760d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionHub
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
