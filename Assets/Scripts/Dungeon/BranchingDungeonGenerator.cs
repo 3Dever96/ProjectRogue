@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class BranchingDungeonGenerator : MonoBehaviour
@@ -15,6 +16,8 @@ public class BranchingDungeonGenerator : MonoBehaviour
     // Grid coordinates mapped to a list of coordinates they are ALLOWED to connect to
     private Dictionary<Vector2Int, List<Vector2Int>> roomConnections = new Dictionary<Vector2Int, List<Vector2Int>>();
     private List<Vector2Int> mainPath = new List<Vector2Int>();
+
+    [SerializeField, Range(0, 7)] private int currentBiome;
 
     private readonly Vector2Int[] directions = {
         Vector2Int.up,
@@ -156,6 +159,7 @@ public class BranchingDungeonGenerator : MonoBehaviour
             bool openWest = connections.Contains(cell + Vector2Int.left);
 
             roomInstance.ConfigurePassages(openNorth, openEast, openSouth, openWest);
+            roomInstance.SetDungeonBiome(currentBiome);
         }
     }
 }
