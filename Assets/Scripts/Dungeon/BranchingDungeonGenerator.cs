@@ -12,10 +12,12 @@ public class BranchingDungeonGenerator : MonoBehaviour
     [Header("Visuals")]
     public Room roomPrefab;
     public float roomSpacing = 10f;
+    public MapCell cell;
 
     // Grid coordinates mapped to a list of coordinates they are ALLOWED to connect to
     private Dictionary<Vector2Int, List<Vector2Int>> roomConnections = new Dictionary<Vector2Int, List<Vector2Int>>();
     private List<Vector2Int> mainPath = new List<Vector2Int>();
+    private Dictionary<Vector2Int, Room> layout = new Dictionary<Vector2Int, Room>();
 
     [SerializeField, Range(0, 7)] private int currentBiome;
 
@@ -35,6 +37,7 @@ public class BranchingDungeonGenerator : MonoBehaviour
     {
         roomConnections.Clear();
         mainPath.Clear();
+        layout.Clear();
 
         // 1. Generate Main Spine
         Vector2Int currentPos = Vector2Int.zero;
@@ -69,6 +72,7 @@ public class BranchingDungeonGenerator : MonoBehaviour
 
         // 3. Spawn the layout
         SpawnDungeon();
+        SetRoomNeighbors();
     }
 
     void AddRoomToGrid(Vector2Int coord)
@@ -160,6 +164,36 @@ public class BranchingDungeonGenerator : MonoBehaviour
 
             roomInstance.ConfigurePassages(openNorth, openEast, openSouth, openWest);
             roomInstance.SetDungeonBiome(currentBiome);
+
+            layout.Add(cell, roomInstance);
         }
+    }
+
+    private void SetRoomNeighbors()
+    {
+        foreach (KeyValuePair<Vector2Int, Room> room in layout)
+        {
+            Vector2Int pos = room.Key;
+            Room currentRoom = room.Value;
+
+            int roomType = Random.Range(0, 8);
+
+            Vector2Int northPos = pos + Vector2Int.up;
+            Vector2Int eastPos = pos + Vector2Int.right;
+            Vector2Int southPos = pos - Vector2Int.up;
+            Vector2Int westPos = pos - Vector2Int.right;
+
+            Room northRoom = layout.ContainsKey(northPos) ? layout[northPos] : null;
+            Room eastRoom = layout.ContainsKey(eastPos) ? layout[eastPos] : null;
+            Room southRoom = layout.ContainsKey(southPos) ? layout[southPos] : null;
+            Room westRoom = layout.ContainsKey(westPos) ? layout[westPos] : null;
+
+            MapCell newCell = Instantiate(cell, new Vector3(pos.x * 1.5f,pos.y * 1.5f, 0f), Quaternion.identity, GameObject.Find("Map Container").transform);
+            currentRoom.SetMapCell(newCell);
+            currentRoom.SetNeighborRooms(northRoom, eastRoom, southRoom, westRoom, roomType);
+        }
+
+        layout[Vector2Int.zero].gameObject.SetActive(true);
+        DungeonManager.Instance.SetNextRoom(layout[Vector2Int.zero]);
     }
 }
