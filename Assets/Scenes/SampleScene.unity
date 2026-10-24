@@ -1432,7 +1432,7 @@ Camera:
   far clip plane: 1000
   field of view: 6.3
   orthographic: 1
-  orthographic size: 2.3
+  orthographic size: 2.4
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   roomPrefab: {fileID: 2969384625563717196, guid: ee7ab57291bd4554ba297efca7a345ef, type: 3}
   roomSpacing: 32
   cell: {fileID: 2111436405295341078, guid: ca174bb6405f3a4419b602eaf8ed7a0d, type: 3}
-  currentBiome: 4
+  currentBiome: 0
 --- !u!4 &1138919873
 Transform:
   m_ObjectHideFlags: 0
@@ -2329,13 +2329,13 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 465051565}
   - {fileID: 1914173540}
   - {fileID: 1138919873}
   - {fileID: 2119249703}
+  - {fileID: 776812034}
+  - {fileID: 832811722}
   - {fileID: 720507072}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 299115202}
-  - {fileID: 465051565}
-  - {fileID: 776812034}
-  - {fileID: 832811722}

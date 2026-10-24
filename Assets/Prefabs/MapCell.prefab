@@ -157,12 +157,11 @@ MonoBehaviour:
   - {fileID: -493424121, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
   roomIcons:
   - {fileID: 2044168518, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
+  - {fileID: -1358524120, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
   - {fileID: 1720104044, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
   - {fileID: -71738231, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
-  - {fileID: 1898564521, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
   - {fileID: 280940339, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
   - {fileID: -1640692218, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
-  - {fileID: -1358524120, guid: f1f7431ff69ad524fb7ef857edbc39c6, type: 3}
   roomImage: {fileID: 7284606510770632134}
   iconImage: {fileID: 68550372861541602}
 --- !u!1 &5278059928481786756
