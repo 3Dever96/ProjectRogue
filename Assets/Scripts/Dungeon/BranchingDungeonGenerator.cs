@@ -275,7 +275,7 @@ public class BranchingDungeonGenerator : MonoBehaviour
             // Spawn minimap data if a map cell reference and a map layout container are configured
             if (cell != null && mapContainer != null)
             {
-                MapCell newCell = Instantiate(cell, new Vector3(cellCoord.x * 1.5f, cellCoord.y * 1.5f, 0f), Quaternion.identity, mapContainer.transform);
+                MapCell newCell = Instantiate(cell, new Vector3(cellCoord.x, cellCoord.y, 0f), Quaternion.identity, mapContainer.transform);
                 roomInstance.SetMapCell(newCell);
             }
 

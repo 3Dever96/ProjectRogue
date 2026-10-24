@@ -12,7 +12,7 @@ public class MinimapCamera : MonoBehaviour
             x = Mathf.RoundToInt(x);
             y = Mathf.RoundToInt(y);
 
-            transform.position = new Vector3(x * 1.5f, y * 1.5f, -10f);
+            transform.position = new Vector3(x, y, -10f);
         }
     }
 }
