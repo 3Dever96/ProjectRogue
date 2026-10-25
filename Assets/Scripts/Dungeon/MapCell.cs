@@ -7,7 +7,6 @@ public class MapCell : MonoBehaviour
     [SerializeField] private SpriteRenderer roomImage;
     [SerializeField] private SpriteRenderer iconImage;
     private int value;
-    private bool showIcon = false;
 
     public void InitializeCell(bool north, bool east, bool south, bool west, int roomType)
     {
@@ -21,20 +20,17 @@ public class MapCell : MonoBehaviour
         if (roomType > 0)
         {
             iconImage.sprite = roomIcons[roomType - 1];
-            showIcon = true;
+        }
+        else
+        {
+            iconImage.gameObject.SetActive(false);
         }
 
         roomImage.gameObject.SetActive(false);
-        iconImage.gameObject.SetActive(false);
     }
 
     public void SetCurrentRoom()
     {
         roomImage.gameObject.SetActive(true);
-
-        if (showIcon)
-        {
-            iconImage.gameObject.SetActive(true);
-        }
     }
 }
