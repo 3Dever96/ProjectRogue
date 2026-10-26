@@ -24,6 +24,8 @@ public class PlayerAirState : PlayerState
     {
         canDoubleJump = true;
         canJump = false; // Prevents accidental instant double-jumps if button is held
+
+        player.Animator.SetBool("IsGrounded", false);
     }
 
     public override void UpdateState(PlayerController player)
@@ -58,6 +60,8 @@ public class PlayerAirState : PlayerState
         {
             player.VerticalSpeed += gravity * Time.deltaTime;
         }
+
+        player.Animator.SetFloat("VerticalSpeed", player.VerticalSpeed);
     }
 
     public override void ChangeState(PlayerController player)

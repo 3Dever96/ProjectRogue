@@ -1,3 +1,4 @@
+using Animancer;
 using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -42,6 +43,8 @@ public class PlayerGroundState : PlayerState
         sprintRecover = false;
         currentStamina = maxStamina;
         canDash = false;
+
+        player.Animator.SetBool("IsGrounded", true);
     }
 
     public override void UpdateState(PlayerController player)
@@ -97,6 +100,8 @@ public class PlayerGroundState : PlayerState
         player.CurrentSpeed = InputHub.Instance.Move != Vector2.zero ? moveSpeed * Mathf.Clamp(InputHub.Instance.Move.magnitude + moveThreshold, 0f, 1f) : 0f;
         player.LookDirection = player.MoveDirection != Vector3.zero ? player.MoveDirection : player.LookDirection;
         player.FaceDirection();
+
+        player.Animator.SetFloat("CurrentSpeed", player.CurrentSpeed);
 
         // --- Jump Input Action ---
         if (InputHub.Instance.Jump && canJump)

@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController Controller { get; private set; }
+    public Animator Animator { get; private set; }
 
     // --- State Machine ---
     public PlayerState CurrentState { get; private set; }
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Controller = GetComponent<CharacterController>();
+        Animator = GetComponentInChildren<Animator>();
 
         // Establish the baseline state on spawn
         SetState(GroundState);

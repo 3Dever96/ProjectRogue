@@ -22,6 +22,8 @@ public class PlayerDashState : PlayerState
         player.MoveDirection = player.GetInputDirection() != Vector3.zero ? player.GetInputDirection() : player.transform.forward;
         player.LookDirection = player.MoveDirection;
         currentTime = dashTime;
+
+        player.Animator.SetBool("IsDashing", true);
     }
 
     public override void UpdateState(PlayerController player)
@@ -48,6 +50,6 @@ public class PlayerDashState : PlayerState
 
     public override void ExitState(PlayerController player)
     {
-        // Intentional cleanup placeholder
+        player.Animator.SetBool("IsDashing", false);
     }
 }
