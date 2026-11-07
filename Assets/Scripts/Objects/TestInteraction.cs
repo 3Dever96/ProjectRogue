@@ -27,12 +27,15 @@ public class TestInteraction : MonoBehaviour, IInteractable
         {
             transform.Rotate(0f, 45f * Time.deltaTime, 0f);
         }
+        else
+        {
+            transform.rotation = Quaternion.identity;
+        }
     }
 
     public void OnInteract()
     {
         canInteract = false;
-        transform.rotation = Quaternion.identity;
         Debug.Log("Interacted with: " + gameObject.name);
     }
 
