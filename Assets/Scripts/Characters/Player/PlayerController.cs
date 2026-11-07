@@ -33,8 +33,12 @@ public class PlayerController : MonoBehaviour
     // Air-state behavior used when the player is in the air.
     [field: SerializeField] public PlayerAirState AirState { get; private set; } = new PlayerAirState();
 
-    // The active behavior state for the player.
+    // Attack behavior used while an attack is active.
+    [field: SerializeField] public PlayerAttackState AttackState { get; private set; } = new PlayerAttackState();
+
+    // The active behavior state and the state that was active before the latest transition.
     public PlayerState CurrentState { get; private set; }
+    public PlayerState LastState { get; private set; }
 
     // Current horizontal movement speed.
     public float CurrentSpeed { get; set; }
@@ -60,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Update and evaluate transitions each frame.
+        // Let the active state update first, then check whether it should transition.
         CurrentState?.UpdateState(this);
         CurrentState?.ChangeState(this);
 
@@ -71,6 +75,10 @@ public class PlayerController : MonoBehaviour
     // Switches to a new player state and calls its lifecycle hooks.
     public void SetState(PlayerState state)
     {
+        // Keep the previous state for transitions such as returning from an attack.
+        LastState = CurrentState != null && CurrentState != state ? CurrentState : LastState;
+
+        // Finish the old state before starting the new one so each state can clean up.
         CurrentState?.EndState(this);
         CurrentState = state;
         CurrentState?.StartState(this);

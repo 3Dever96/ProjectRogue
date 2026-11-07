@@ -7,6 +7,9 @@ using UnityEngine;
 [System.Serializable]
 public abstract class PlayerState
 {
+    // Whether the attack manager may start or chain an attack in this state.
+    public bool canAttack;
+
     // Called when this state becomes active.
     public abstract void StartState(PlayerController player);
 
