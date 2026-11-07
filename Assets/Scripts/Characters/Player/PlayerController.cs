@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player States")]
     [field: SerializeField] public PlayerGroundState GroundState { get; private set; } = new PlayerGroundState();
+    [field: SerializeField] public PlayerAirState AirState { get; private set; } = new PlayerAirState();
     public PlayerState CurrentState { get; private set; }
 
     public float CurrentSpeed { get; set; }

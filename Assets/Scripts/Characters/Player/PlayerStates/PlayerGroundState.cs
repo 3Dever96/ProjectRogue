@@ -29,7 +29,7 @@ public class PlayerGroundState : PlayerState
 
     public override void UpdateState(PlayerController player)
     {
-        float maxSpeed = baseMaxSpeed + (addSpeed * (player.Stats.stats["AGI"] / 10f));
+        float maxSpeed = baseMaxSpeed + (addSpeed * (player.Stats.stats["AGI"] / player.Stats.stats["MAX_AGI"]));
         moveSpeed = maxSpeed * InputHub.Instance.Move.magnitude;
 
         Vector3 direction = player.GetDirection();
@@ -72,7 +72,7 @@ public class PlayerGroundState : PlayerState
 
         player.FaceDirection();
 
-        float jumpSpeed = baseJumpSpeed + (addJumpSpeed * (player.Stats.stats["AGI"] / 10f));
+        float jumpSpeed = baseJumpSpeed + (addJumpSpeed * (player.Stats.stats["AGI"] / player.Stats.stats["MAX_AGI"]));
 
         if (InputHub.Instance.Jump && canJump)
         {
@@ -84,7 +84,10 @@ public class PlayerGroundState : PlayerState
 
     public override void ChangeState(PlayerController player)
     {
-        // Handle state changes here
+        if (player.VerticalSpeed > 0f || !player.CheckCollision(player.GroundOffset, player.CheckRadius, player.GroundLayer))
+        {
+            player.SetState(player.AirState);
+        }
     }
 
     public override void EndState(PlayerController player)
