@@ -15,6 +15,9 @@ public class InputHub : MonoBehaviour
     // Tracks whether the jump input is currently being pressed.
     public bool Jump { get; private set; }
 
+    // Tracks whether the interact input is currently being pressed.
+    public bool Interact { get; private set; }
+
     // Reference to the PlayerInput component used to listen for input events.
     private PlayerInput playerInput;
 
@@ -47,7 +50,12 @@ public class InputHub : MonoBehaviour
                 Move = context.ReadValue<Vector2>();
                 break;
             case "Jump":
+                // Update the jump state whenever the jump action fires.
                 Jump = context.ReadValueAsButton();
+                break;
+            case "Interact":
+                // Update the interact state whenever the interaction action fires.
+                Interact = context.ReadValueAsButton();
                 break;
         }
     }
