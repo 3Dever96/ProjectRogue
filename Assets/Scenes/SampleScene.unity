@@ -427,6 +427,18 @@ MonoBehaviour:
   - key: MAX_AGI
     value:
       BaseValue: 50
+  currentHp: 0
+  avatar: {fileID: 140748647}
+  hitColor: {r: 0.5377358, g: 0, b: 0, a: 1}
+  hitStopTime: 0.2
+  maxIFrames: 0.85
+  maxBlinkTime: 0.2
+  OnHpChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!143 &268279101
 CharacterController:
   m_ObjectHideFlags: 0
