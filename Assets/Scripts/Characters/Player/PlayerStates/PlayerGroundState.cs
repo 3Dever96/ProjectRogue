@@ -54,7 +54,7 @@ public class PlayerGroundState : PlayerState
     public override void UpdateState(PlayerController player)
     {
         // Speed scales with agility so faster characters move faster.
-        float maxSpeed = baseMaxSpeed + (addSpeed * (player.Stats.stats["AGI"] / player.Stats.stats["MAX_AGI"]));
+        float maxSpeed = baseMaxSpeed + (addSpeed * (player.Stats.stats["AGI"].Value / player.Stats.stats["MAX_AGI"].Value));
         moveSpeed = maxSpeed * InputHub.Instance.Move.magnitude;
 
         Vector3 direction = player.GetDirection();
@@ -101,7 +101,7 @@ public class PlayerGroundState : PlayerState
         player.FaceDirection();
 
         // Jump force can also be increased based on agility.
-        float jumpSpeed = baseJumpSpeed + (addJumpSpeed * (player.Stats.stats["AGI"] / player.Stats.stats["MAX_AGI"]));
+        float jumpSpeed = baseJumpSpeed + (addJumpSpeed * (player.Stats.stats["AGI"].Value / player.Stats.stats["MAX_AGI"].Value));
 
         // Trigger jump only once per button press.
         if (InputHub.Instance.Jump && canJump)

@@ -4,14 +4,14 @@ using UnityEngine;
 /// Controls the player's movement and state transitions.
 /// This component manages the CharacterController, current state, and basic locomotion rules.
 /// </summary>
-[RequireComponent(typeof(CharacterController)), RequireComponent(typeof(PlayerStats))]
+[RequireComponent(typeof(CharacterController)), RequireComponent(typeof(EntityStats))]
 public class PlayerController : MonoBehaviour
 {
     // Cached CharacterController used to move the player.
     public CharacterController Controller { get; private set; }
 
     // Reference to the player stat container.
-    public PlayerStats Stats { get; private set; }
+    public EntityStats Stats { get; private set; }
 
     [Header("Collision Detection")]
     // Layer used to detect ground contact.
@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour
     {
         // Cache required components for use throughout the script.
         Controller = GetComponent<CharacterController>();
-        Stats = GetComponent<PlayerStats>();
-
+        Stats = GetComponent<EntityStats>();
+    
         // Start in the grounded state.
         SetState(GroundState);
     }
