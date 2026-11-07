@@ -503,25 +503,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackManager
   attackData:
+  - key: GroundAttack0
+    value:
+      animation: {fileID: 0}
+      currentSpeed: 2
+      verticalSpeed: 0
+      attackDuration: 0.2
   - key: GroundAttack1
     value:
       animation: {fileID: 0}
-      currentSpeed: 0
+      currentSpeed: 1
       verticalSpeed: 0
-      attackDuration: 0
+      attackDuration: 0.1
   - key: GroundAttack2
     value:
       animation: {fileID: 0}
-      currentSpeed: 0
+      currentSpeed: 3
       verticalSpeed: 0
-      attackDuration: 0
-  - key: GroundAttack3
+      attackDuration: 0.3
+  - key: AirAttack
     value:
       animation: {fileID: 0}
-      currentSpeed: 0
-      verticalSpeed: 0
-      attackDuration: 0
-  comboResetDelay: 1
+      currentSpeed: 3
+      verticalSpeed: 3
+      attackDuration: 0.3
+  comboResetDelay: 0.5
   comboInputBuffer: 0.15
 --- !u!1 &330585543
 GameObject:
