@@ -44,6 +44,8 @@ public class PlayerGroundState : PlayerState
 
     public override void StartState(PlayerController player)
     {
+        canAttack = true;
+
         // Keep the player anchored to the ground on entry.
         player.VerticalSpeed = stickForce;
 
@@ -123,6 +125,6 @@ public class PlayerGroundState : PlayerState
 
     public override void EndState(PlayerController player)
     {
-        // Cleanup ground state logic here
+        canAttack = false;
     }
 }

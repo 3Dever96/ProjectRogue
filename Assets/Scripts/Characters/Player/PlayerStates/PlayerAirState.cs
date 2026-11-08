@@ -13,7 +13,7 @@ public class PlayerAirState : PlayerState
 
     public override void StartState(PlayerController player)
     {
-        // Initialize air state logic here
+        canAttack = true;
     }
 
     public override void UpdateState(PlayerController player)
@@ -42,6 +42,6 @@ public class PlayerAirState : PlayerState
 
     public override void EndState(PlayerController player)
     {
-        // Cleanup air state logic here
+        canAttack = false;
     }
 }
