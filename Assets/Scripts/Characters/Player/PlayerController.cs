@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     // Attack behavior used while an attack is active.
     [field: SerializeField] public PlayerAttackState AttackState { get; private set; } = new PlayerAttackState();
+    [field: SerializeField] public PlayerHitState HitState { get; private set; } = new PlayerHitState();
 
     // The active behavior state and the state that was active before the latest transition.
     public PlayerState CurrentState { get; private set; }
@@ -115,5 +116,10 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = MoveDirection * CurrentSpeed;
         velocity.y = VerticalSpeed;
         Controller.Move(velocity * Time.deltaTime);
+    }
+
+    public void OnHit()
+    {
+        SetState(HitState);
     }
 }

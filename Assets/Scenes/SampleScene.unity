@@ -410,6 +410,12 @@ MonoBehaviour:
     hitbox: {fileID: 1511852915}
     comboWindowStart: 0.2
     comboWindowEnd: 0.6
+  <HitState>k__BackingField:
+    canAttack: 0
+    knockbackSpeed: 3
+    knockupSpeed: 3
+    knockbackDuration: 2
+    gravity: 30
 --- !u!114 &268279100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,10 +447,25 @@ MonoBehaviour:
   hitStopTime: 0.2
   maxIFrames: 1.5
   maxBlinkTime: 0.1
-  OnHpChange:
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 268279099}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
     m_PersistentCalls:
       m_Calls: []
-  OnDeath:
+  OnHpChanged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!143 &268279101
@@ -1856,7 +1877,7 @@ MonoBehaviour:
   hitStopTime: 0.2
   maxIFrames: 1.5
   maxBlinkTime: 0.1
-  OnHpChange:
+  OnHit:
     m_PersistentCalls:
       m_Calls: []
   OnDeath:
@@ -1874,6 +1895,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1191006437
 BoxCollider:
   m_ObjectHideFlags: 0

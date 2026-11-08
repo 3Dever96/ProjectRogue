@@ -36,10 +36,12 @@ public class EntityStats : MonoBehaviour
 
     [Header("Events")]
     // Invoked whenever the entity's health changes.
-    public UnityEvent OnHpChange;
+    public UnityEvent OnHit;
 
     // Invoked when the entity's health reaches zero or below.
     public UnityEvent OnDeath;
+
+    public UnityEvent OnHpChanged;
 
     private void Start()
     {
@@ -53,7 +55,8 @@ public class EntityStats : MonoBehaviour
         if (isInvincible) return;
 
         currentHp -= damage;
-        OnHpChange?.Invoke();
+        OnHit?.Invoke();
+        OnHpChanged?.Invoke();
 
         // Notify listeners when damage reduces health to zero or less.
         if (currentHp <= 0f)
@@ -71,7 +74,7 @@ public class EntityStats : MonoBehaviour
     public void Heal(float healAmount)
     {
         currentHp += healAmount;
-        OnHpChange?.Invoke();
+        OnHpChanged?.Invoke();
     }
 
     // Runs the hit-stop, invincibility timer, and blinking visual effect.
