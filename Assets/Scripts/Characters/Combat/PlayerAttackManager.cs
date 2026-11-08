@@ -34,9 +34,12 @@ public class PlayerAttackManager : MonoBehaviour
     // Tracks attack-button edges so a held button is treated as one press.
     private bool attackButtonWasPressed;
 
+    // How long the player must wait between air attacks while airborne.
+    [SerializeField, Min(0f)] private float airAttackCooldown = 0.35f;
+
     // Whether a fresh press is waiting for the ground combo window.
     private bool hasBufferedAttack;
-    private bool hasUsedAirAttack;
+    private float airAttackCooldownTimer;
 
     private void Start()
     {
@@ -78,7 +81,7 @@ public class PlayerAttackManager : MonoBehaviour
         else if (player.CurrentState == player.GroundState)
         {
             // Reset the sequence after the player has been idle on the ground.
-            hasUsedAirAttack = false;
+            airAttackCooldownTimer = 0f;
             comboIdleTimer += Time.deltaTime;
             if (comboIdleTimer >= comboResetDelay)
             {
@@ -109,7 +112,8 @@ public class PlayerAttackManager : MonoBehaviour
         {
             // Air attacks are not chained or buffered; each requires a new press.
             hasBufferedAttack = false;
-            if (attackButtonWasPressedThisFrame && player.CurrentState.canAttack)
+            airAttackCooldownTimer = Mathf.Max(0f, airAttackCooldownTimer - Time.deltaTime);
+            if (attackButtonWasPressedThisFrame && player.CurrentState.canAttack && airAttackCooldownTimer <= 0f)
             {
                 StartAirAttack();
             }
@@ -173,8 +177,8 @@ public class PlayerAttackManager : MonoBehaviour
 
     private void StartAirAttack()
     {
-        // Allow only one air attack until the player lands.
-        if (hasUsedAirAttack)
+        // Air attacks can be repeated, but not instantly spammed while airborne.
+        if (airAttackCooldownTimer > 0f)
         {
             return;
         }
@@ -189,7 +193,7 @@ public class PlayerAttackManager : MonoBehaviour
         // Preserve the air state as LastState so the attack returns to it on completion.
         player.AttackState.GetAttackData(airAttack);
         player.SetState(player.AttackState);
-        hasUsedAirAttack = true;
+        airAttackCooldownTimer = airAttackCooldown;
         hasBufferedAttack = false;
     }
 }

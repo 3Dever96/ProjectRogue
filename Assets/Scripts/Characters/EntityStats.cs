@@ -60,9 +60,11 @@ public class EntityStats : MonoBehaviour
         {
             OnDeath?.Invoke();
         }
-
-        // Start hit feedback and temporarily prevent further damage.
-        StartCoroutine(InvincibilityRoutine());
+        else
+        {
+            // Start hit feedback and temporarily prevent further damage.
+            StartCoroutine(InvincibilityRoutine());
+        }
     }
 
     // Restores health and notifies listeners of the change.
