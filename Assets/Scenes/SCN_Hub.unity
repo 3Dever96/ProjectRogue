@@ -4073,6 +4073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleGroundsGate (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b9088095d1a35fb4eacec8ae781647e5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6233,6 +6237,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14482,6 +14490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleGroundsTree (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14704,6 +14716,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b9088095d1a35fb4eacec8ae781647e5, type: 3}
       propertyPath: m_Name
       value: TempleGroundsGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b9088095d1a35fb4eacec8ae781647e5, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15151,6 +15167,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19894,6 +19914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleGroundsTree (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20371,6 +20395,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7109bedacb19b604b8ed7da527f5b3c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1840431997}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7109bedacb19b604b8ed7da527f5b3c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1850589555}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7109bedacb19b604b8ed7da527f5b3c4, type: 3}
       insertIndex: -1
@@ -21240,6 +21267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempleGroundsGate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b9088095d1a35fb4eacec8ae781647e5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21315,6 +21346,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21717,6 +21752,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26867,6 +26906,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33815,6 +33858,114 @@ CapsuleCollider:
   m_Height: 3.214496
   m_Direction: 1
   m_Center: {x: -0.01, y: 1.13, z: -0.024917137}
+--- !u!1001 &1850589554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1165777983}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.96
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.93
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_Name
+      value: Temple
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1850589557}
+  m_SourcePrefab: {fileID: 100100000, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+--- !u!4 &1850589555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+  m_PrefabInstance: {fileID: 1850589554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1850589556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
+  m_PrefabInstance: {fileID: 1850589554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1850589557
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850589556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: e1581e9a6e9053948b68ff73fbbe944c, type: 3}
 --- !u!1 &1851531021
 GameObject:
   m_ObjectHideFlags: 0
@@ -34958,6 +35109,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36336,6 +36491,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
       propertyPath: m_Name
       value: TempleGroundsTree (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b615a2eb92bd139459083a98fcabcd85, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39756,6 +39915,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b9088095d1a35fb4eacec8ae781647e5, type: 3}
       propertyPath: m_Name
       value: TempleGroundsGate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b9088095d1a35fb4eacec8ae781647e5, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
