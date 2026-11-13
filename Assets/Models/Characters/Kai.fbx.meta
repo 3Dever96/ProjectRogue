@@ -10,7 +10,7 @@ ModelImporter:
       name: M_KaiBase
     second: {fileID: 2100000, guid: 6f2e2eae7191aae438bea070f4d75dd2, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
