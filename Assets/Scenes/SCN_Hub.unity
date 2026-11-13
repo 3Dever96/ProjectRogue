@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.4666667, g: 0.56078434, b: 0.6784314, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.011
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -28648,14 +28648,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2803011858492387148, guid: 2d36619c2c59544449bb4165ce528e39, type: 3}
-      propertyPath: m_CullingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803011858492387148, guid: 2d36619c2c59544449bb4165ce528e39, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4824402041578989581, guid: 2d36619c2c59544449bb4165ce528e39, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -28695,10 +28687,6 @@ PrefabInstance:
     - target: {fileID: 4824402041578989581, guid: 2d36619c2c59544449bb4165ce528e39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8843750031106489558, guid: 2d36619c2c59544449bb4165ce528e39, type: 3}
-      propertyPath: avatar
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
