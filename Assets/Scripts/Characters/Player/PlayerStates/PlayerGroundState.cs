@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// Handles movement and jumping while the player is grounded.
-/// This state accelerates movement, slows the player when no input is pressed, and triggers a jump when conditions are met.
+/// Handles grounded movement, acceleration, deceleration, and jump behavior.
+/// This state updates the player's speed, facing direction, and jump trigger while contact with the ground is maintained.
 /// </summary>
 [System.Serializable]
 public class PlayerGroundState : PlayerState
@@ -11,26 +11,26 @@ public class PlayerGroundState : PlayerState
     // Base movement speed while grounded.
     [SerializeField] private float baseMaxSpeed = 5f;
 
-    // Extra speed gained from agility stat scaling.
+    // Extra speed added by agility-based scaling.
     [SerializeField] private float addSpeed = 7f;
 
     // Rate at which ground movement accelerates.
     [SerializeField] private float accel = 15f;
 
-    // Rate at which the player slows down when turning or stopping.
+    // Rate at which the player slows down while turning or stopping.
     [SerializeField] private float decel = 20f;
 
-    // Friction applied when there is no movement input.
+    // Friction applied when no movement input is provided.
     [SerializeField] private float fric = 10f;
 
-    // Angle threshold used to determine if the player should rotate before moving.
+    // Angle threshold used to decide whether the player should rotate before moving.
     [SerializeField] private float turnAngle = 90f;
 
     // Current calculated movement speed for this frame.
     private float moveSpeed;
 
     [Header("Vertical Settings")]
-    // Downward force applied while grounded to keep the player attached to the ground.
+    // Downward force applied while grounded to keep the player anchored to the surface.
     [SerializeField] private float stickForce = -5f;
 
     // Base vertical jump speed.
@@ -39,23 +39,25 @@ public class PlayerGroundState : PlayerState
     // Extra jump velocity added based on agility.
     [SerializeField] private float addJumpSpeed = 5f;
 
-    // Prevents repeated jump triggers while the jump button is held down.
+    // Prevents repeated jump triggers while the jump button remains held.
     private bool canJump;
 
     public override void StartState(PlayerController player)
     {
         canAttack = true;
 
-        // Keep the player anchored to the ground on entry.
+        // Keep the player grounded when entering this state.
         player.VerticalSpeed = stickForce;
 
-        // Reset jump buffering so the next press can trigger a jump.
+        // Reset the jump latch so the next press can trigger a jump.
         canJump = false;
+
+        player.Anim.SetBool("IsGrounded", true);
     }
 
     public override void UpdateState(PlayerController player)
     {
-        // Speed scales with agility so faster characters move faster.
+        // Movement speed scales with agility so faster characters move faster.
         float maxSpeed = baseMaxSpeed + (addSpeed * (player.Stats.stats["AGI"].Value / player.Stats.stats["MAX_AGI"].Value));
         moveSpeed = maxSpeed * InputHub.Instance.Move.magnitude;
 
@@ -63,7 +65,7 @@ public class PlayerGroundState : PlayerState
 
         if (direction != Vector3.zero)
         {
-            // If the input direction is far from the current facing direction, reduce speed and rotate.
+            // If the input direction differs significantly from the current facing direction, reduce speed and rotate.
             if (Vector3.Angle(direction, player.LookDirection) > turnAngle)
             {
                 player.CurrentSpeed -= decel * Time.deltaTime;
@@ -101,11 +103,12 @@ public class PlayerGroundState : PlayerState
         }
 
         player.FaceDirection();
+        player.Anim.SetFloat("CurrentSpeed", player.CurrentSpeed);
 
         // Jump force can also be increased based on agility.
         float jumpSpeed = baseJumpSpeed + (addJumpSpeed * (player.Stats.stats["AGI"].Value / player.Stats.stats["MAX_AGI"].Value));
 
-        // Trigger jump only once per button press.
+        // Trigger a jump only once per button press.
         if (InputHub.Instance.Jump && canJump)
         {
             player.VerticalSpeed = jumpSpeed;
@@ -116,7 +119,7 @@ public class PlayerGroundState : PlayerState
 
     public override void ChangeState(PlayerController player)
     {
-        // Leave grounded state if the player has vertical speed upward or has lost ground contact.
+        // Exit the grounded state if the player is moving upward or if ground contact is lost.
         if (player.VerticalSpeed > 0f || !player.CheckCollision(player.GroundOffset, player.CheckRadius, player.GroundLayer))
         {
             player.SetState(player.AirState);

@@ -14,6 +14,8 @@ public class PlayerAirState : PlayerState
     public override void StartState(PlayerController player)
     {
         canAttack = true;
+
+        player.Anim.SetBool("IsGrounded", false);
     }
 
     public override void UpdateState(PlayerController player)
@@ -29,6 +31,7 @@ public class PlayerAirState : PlayerState
 
         // Apply gravity to pull the player downward over time.
         player.VerticalSpeed -= gravity * Time.deltaTime;
+        player.Anim.SetFloat("VerticalSpeed", player.VerticalSpeed);
     }
 
     public override void ChangeState(PlayerController player)
